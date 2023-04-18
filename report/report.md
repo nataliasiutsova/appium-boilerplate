@@ -1,6 +1,6 @@
 ## Android-NativeDemoApp report
 
-![img report](https://github.com/nataliasiutsova/appium-boilerplate/report/Allure-report-1.png)
+![img report]([https://github.com/nataliasiutsova/appium-boilerplate/report/Allure-report-1.png](https://github.com/nataliasiutsova/appium-boilerplate/blob/main/report/Allure-report-1.PNG))
 
 ### Issues links
 
