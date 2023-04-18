@@ -14,10 +14,11 @@
             "@wdio/mocha-framework",
             "expect-webdriverio",
             "@wdio/sauce-service",
+            "@types/mocha",
+            "@wdio/appium-service",
+            "@wdio/local-runner",
+            "@wdio/allure-reporter"
         ]
     },
-    "include": [
-        "./config/**/*.ts",
-        "./tests/**/*.ts"
-    ]
+    "include": ["./config/**/*.ts", "./tests/**/*.ts"]
 }

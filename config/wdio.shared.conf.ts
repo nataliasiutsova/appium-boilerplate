@@ -3,6 +3,7 @@
  * If you want to know which configuration options you have then you can
  * check https://webdriver.io/docs/configurationfile
  */
+
 export const config: WebdriverIO.Config = {
     //
     // ====================
@@ -46,7 +47,7 @@ export const config: WebdriverIO.Config = {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: "debug",
+    logLevel: "info",
     // Set specific log levels per logger
     // loggers:
     // - webdriver, webdriverio
@@ -68,7 +69,7 @@ export const config: WebdriverIO.Config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: "http://the-internet.herokuapp.com",
+    baseUrl: "http://localhost/wd/hub",
     // Default timeout for all waitFor* commands.
     /**
      * NOTE: This has been increased for more stable Appium Native app
@@ -110,7 +111,17 @@ export const config: WebdriverIO.Config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ["spec"],
+    reporters: [
+        [
+            "allure",
+            {
+                outputDir: "allure-results",
+                disableWebdriverStepsReporting: false,
+                disableWebdriverScreenshotsReporting: false,
+            },
+        ],
+    ],
+
     // Options to be passed to Mocha.
     mochaOpts: {
         ui: "bdd",
