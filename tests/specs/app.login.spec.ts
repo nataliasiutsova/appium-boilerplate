@@ -80,7 +80,7 @@ describe("WebdriverIO and Appium, when interacting with a login form,", () => {
         await NativeAlert.waitForIsShown(false);
     });
 
-    it("should not be able sign up without password confirmation", async () => {
+    it("should not be able sign up with incorrect password confirmation", async () => {
         // Always make sure you are on the right tab
         await LoginScreen.tapOnSignUpContainerButton();
         // Submit the data
@@ -88,6 +88,7 @@ describe("WebdriverIO and Appium, when interacting with a login form,", () => {
         // await LoginScreen.submitSignUpForm({ username: 'test@webdriver.io', password: 'Test1234!' });
         await $("~input-email").setValue("test@webdriver.io");
         await $("~input-password").setValue("Teast1234!");
+        await $("~input-repeat-password").setValue("Teast1234");
         await $("~button-SIGN UP").click();
 
         const tip3 = await $(
